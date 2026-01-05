@@ -1,9 +1,7 @@
 
 # Maximizing Tree Diameter with Removals 🚀
 
-[![Difficulty](https://img.shields.io/badge/Difficulty-Div1%2FDiv2-blue)](https://codeforces.com/)  
-[![Originality](https://img.shields.io/badge/Originality-100%25-green)](https://codeforces.com/)  
-[![Status](https://img.shields.io/badge/Status-Ready%20for%20Contest-orange)](https://codeforces.com/)
+[![Difficulty](https://img.shields.io/badge/Difficulty-Div1%2FDiv2-blue)](https://codeforces.com/)  [![Originality](https://img.shields.io/badge/Originality-100%25-green)](https://codeforces.com/)  [![Status](https://img.shields.io/badge/Status-Ready%20for%20Contest-orange)](https://codeforces.com/)
 
 ## 🌟 Overview
 
@@ -76,9 +74,6 @@ Included 5 meticulously crafted test cases:
 5. **Long Chain**: Stresses path computations.
 
 Run with: `python solution.py < test_cases/1.in` and compare to `1.out`.
-
-## 📁 Folder Structure
-submission.zip ├── qwen/ # Qwen failure simulations (3 attempts, all fail) ├── test_cases/ # 5+ input/output pairs ├── idea.md # Problem ideation process ├── problem.md # Full statement & specs ├── solution.md # Detailed algorithm explanation ├── solution.py # Optimal Python code (AC-ready) ├── requirements.json # Time/space limits ├── README.md # This file! ├── solution_bf.py # Brute-force for small cases └── generator.py # Random test case generator
 
 ## 🚀 How to Run & Test
 
