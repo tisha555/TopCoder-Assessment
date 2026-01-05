@@ -1,0 +1,32 @@
+# Qwen Attempt 1: Fails because it only considers diameters from subtrees, ignoring paths through the current node.
+import sys
+sys.setrecursionlimit(10**5 + 10)
+
+def dfs(u, parent, adj, max_diam, max_down, k):
+    children = []
+    for v, w in adj[u]:
+        if v != parent:
+            dfs(v, u, adj, max_diam, max_down, k)
+            children.append((v, w))
+    if not children:
+        max_diam[u][0] = 0
+        max_down[u][0] = 0
+        return
+    for r in range(k + 1):
+        for v, w in children:
+            if max_down[v][r] != float('-inf'):
+                max_down[u][r] = max(max_down[u][r], w + max_down[v][r])
+            if max_diam[v][r] != float('-inf'):
+                max_diam[u][r] = max(max_diam[u][r], max_diam[v][r])
+    # Missing: Paths through u
+
+n, k = map(int, input().split())
+adj = [[] for _ in range(n + 1)]
+for _ in range(n - 1):
+    u, v, w = map(int, input().split())
+    adj[u].append((v, w))
+    adj[v].append((u, w))
+max_diam = [[float('-inf')] * (k + 1) for _ in range(n + 1)]
+max_down = [[float('-inf')] * (k + 1) for _ in range(n + 1)]
+dfs(1, -1, adj, max_diam, max_down, k)
+print(max(max_diam[1]))

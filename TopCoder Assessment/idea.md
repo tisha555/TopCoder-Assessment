@@ -1,0 +1,5 @@
+The core idea was conceived by extending the classic tree diameter problem (finding the longest path in an unweighted/weighted tree). Initially, I considered maximizing diameter by removing edges, but this was rejected as it could be solved via MST-like approaches and wasn't original. A variant with node removals was explored, but early attempts limited removals to leaves, which was too simple.
+
+Refinements: To increase difficulty, allow removals of any nodes (up to k) except the root, forcing consideration of subtree diameters and paths through nodes. k was capped at 20 to enable DP with states for removal counts, making it Div1/Div2 suitable (n=1e5). Rejected variants included minimizing diameter or using undirected graphs without rooting.
+
+Final formulation: The problem balances tree DP complexity with small k, ensuring originality (no direct matches in searches) and requiring careful handling of removal distributions in path computations.
